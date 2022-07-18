@@ -1,18 +1,10 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
 import { Typography } from "@mui/material";
+import { Box } from "@mui/system";
 
 const useStyles = makeStyles({
-  circle: {
-    backgroundColor: "#1F9547",
-    padding: "4px 10px",
-    marginTop: "12px",
-    width: 20,
-    height: 30,
-    borderRadius: "9999px",
-    marginRight: 20,
-    textAlign: "center",
-  },
+  circle: {},
 
   progres: {
     width: "20px",
@@ -21,12 +13,23 @@ const useStyles = makeStyles({
   },
 });
 
-const Progress = () => {
+const Progress2 = ({ status }) => {
   const classes = useStyles();
 
   return (
     <>
-      <div className={classes.circle}>
+      <Box
+        sx={{
+          backgroundColor: "#1F9547",
+          padding: "4px 10px",
+          border: "3px solid #1F9547",
+          marginTop: "12px",
+          width: "16px",
+          height: "26px",
+          borderRadius: "9999px",
+          textAlign: "center",
+        }}
+      >
         <Typography
           color="white"
           sx={{
@@ -37,13 +40,25 @@ const Progress = () => {
         >
           1
         </Typography>
-      </div>
+      </Box>
       <p className={classes.progres}>.</p>
       <p className={classes.progres}>.</p>
       <p className={classes.progres}>.</p>
       <p className={classes.progres}>.</p>
       <p className={classes.progres}>.</p>
-      <div className={classes.circle}>
+
+      <Box
+        sx={{
+          backgroundColor: "#1F9547",
+          padding: "4px 10px",
+          border: "3px solid #1F9547",
+          marginTop: "12px",
+          width: "16px",
+          height: "26px",
+          borderRadius: "9999px",
+          textAlign: "center",
+        }}
+      >
         <Typography
           color="white"
           sx={{
@@ -54,15 +69,26 @@ const Progress = () => {
         >
           2
         </Typography>
-      </div>
+      </Box>
       <p className={classes.progres}>.</p>
       <p className={classes.progres}>.</p>
       <p className={classes.progres}>.</p>
       <p className={classes.progres}>.</p>
       <p className={classes.progres}>.</p>
-      <div className={classes.circle}>
+      <Box
+        sx={{
+          backgroundColor: "white",
+          padding: "4px 10px",
+          border: "3px solid #1F9547",
+          marginTop: "12px",
+          width: "16px",
+          height: "26px",
+          borderRadius: "9999px",
+          textAlign: "center",
+        }}
+      >
         <Typography
-          color="white"
+          color="primary"
           sx={{
             fontSize: 13,
             fontWeight: 700,
@@ -71,15 +97,27 @@ const Progress = () => {
         >
           3
         </Typography>
-      </div>
+      </Box>
       <p className={classes.progres}>.</p>
       <p className={classes.progres}>.</p>
       <p className={classes.progres}>.</p>
       <p className={classes.progres}>.</p>
       <p className={classes.progres}>.</p>
-      <div className={classes.circle}>
+      <Box
+        sx={{
+          backgroundColor: "white",
+          padding: "4px 10px",
+          border: "3px solid #1F9547",
+          marginTop: "12px",
+          width: "16px",
+          height: "26px",
+          borderRadius: "9999px",
+          marginRight: "30px",
+          textAlign: "center",
+        }}
+      >
         <Typography
-          color="white"
+          color="primary"
           sx={{
             fontSize: 13,
             fontWeight: 700,
@@ -88,9 +126,9 @@ const Progress = () => {
         >
           4
         </Typography>
-      </div>
+      </Box>
     </>
   );
 };
 
-export default Progress;
+export default Progress2;

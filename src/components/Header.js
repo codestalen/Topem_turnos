@@ -4,8 +4,10 @@ import arrow from "../assets/img/Grupo8.png";
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
 import Logo from "../assets/img/Cruzverde@2x.png";
-import Progress from "./offices/Progress";
 import LogoText from "./home/LogoText"
+import Progress1 from "./offices/Progress1";
+import Progress2 from "./offices/Progress2";
+import Progress3 from "./offices/Progress3";
 
 const useStyles = makeStyles({
   root: {
@@ -70,7 +72,18 @@ export default function Header({ seguimiento, link, status }) {
               <img className={classes.arrow} src={arrow} alt="atras" />
               <p className={classes.linkText}>atras</p>
             </Link>
-            <Progress status={status} />
+            {
+              status == 1 &&  <Progress1 status={status} />
+              
+            }
+
+            {
+              status == 2 && <Progress2 />
+            }
+            {
+              status == 3 && <Progress3 />
+            }
+           
             <LogoText />
           </div>
         )}
