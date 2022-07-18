@@ -5,7 +5,7 @@ import Header from '../components/Header'
 const Form = () => {
   return (
     <div>
-      <Header seguimiento={1}/>
+      <Header seguimiento={1} link={'/offices'} status={2}/>
       <AddDate />
 
     </div>

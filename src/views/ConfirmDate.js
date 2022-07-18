@@ -7,7 +7,7 @@ const ConfirmDate = () => {
   
   return (
     <div>
-      <Header seguimiento={1}/>
+      <Header seguimiento={1} link={'/form'}/>
       <DateResults />
     </div>
   )

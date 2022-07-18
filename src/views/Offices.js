@@ -5,7 +5,7 @@ import SectionOficce from '../components/offices/SectionOficce'
 const Offices = () => {
   return (
     <>
-      <Header seguimiento={1}/>
+      <Header seguimiento={1} link={'/'} status={1}/>
       <SectionOficce />
     </>
   )

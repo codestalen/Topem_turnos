@@ -1,12 +1,11 @@
 import * as React from "react";
 import { makeStyles } from "@mui/styles";
 import arrow from "../assets/img/Grupo8.png";
-
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
-
 import Logo from "../assets/img/Cruzverde@2x.png";
 import Progress from "./offices/Progress";
+import LogoText from "./home/LogoText"
 
 const useStyles = makeStyles({
   root: {
@@ -32,7 +31,7 @@ const useStyles = makeStyles({
 
   containerSeguimiento: {
     width: "100%",
-    padding: "40px 80px 45px 80px",
+    padding: "40px 60px 45px 80px",
     display: "flex",
     alignContent: "center",
   },
@@ -58,7 +57,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Header({ seguimiento }) {
+export default function Header({ seguimiento, link, status }) {
   const classes = useStyles();
 
   return (
@@ -67,12 +66,12 @@ export default function Header({ seguimiento }) {
         <img className={classes.img} src={Logo} alt="logo" />
         {seguimiento && (
           <div className={classes.containerSeguimiento}>
-            <Link className={classes.link} to="/">
+            <Link className={classes.link} to={link}>
               <img className={classes.arrow} src={arrow} alt="atras" />
               <p className={classes.linkText}>atras</p>
             </Link>
-            <Progress />
-            
+            <Progress status={status} />
+            <LogoText />
           </div>
         )}
       </div>

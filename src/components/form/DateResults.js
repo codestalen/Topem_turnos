@@ -6,6 +6,7 @@ import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
 import LogoText from '../home/LogoText'
 import { DataContext } from "../../context/DataContext";
+import ModalForm from './ModalForm';
 
 const useStyles = makeStyles({
   root: {
@@ -134,9 +135,10 @@ const DateResults = () => {
           
           
           <div className={classes.containerLink}>
-            <Link className={classes.link} to="/offices" underline="none">Aceptar</Link>
+            <Link className={classes.link} to="/" underline="none">Aceptar</Link>
           </div>
         </div>
+        <ModalForm />
       </Grid>
       <Grid item xs={7}>
         <img src={imgGrupo} alt="grupo" />

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import iconSearch from "../../assets/img/icon-search.svg";
 
@@ -68,47 +68,53 @@ const useStyles = makeStyles({
   },
 });
 
-const SedeSelection = ({selectSede, setSelectSede}) => {
+
+const SedeSelection = ({ selectSede, setSelectSede }) => {
   const classes = useStyles();
+
+  const sedes = [
+    { id: 1, name: "Sede 1" },
+    { id: 2, name: "Sede 2" },
+    { id: 3, name: "Sede 3" },
+    { id: 4, name: "Sede 4" },
+  ];
+
+  const [newValue, setNewValue] = useState('')
+
+  const handleInputChange = (e) => {
+    setNewValue(e.target.value);
+  };
+
+  const filtered = !newValue
+    ? sedes
+    : sedes.filter((e) =>
+        e.name.toLowerCase().includes(newValue.toLowerCase())
+      );
 
   return (
     <form>
       <div className={classes.containerIcon}>
-        <input className={classes.input} type="text" placeholder="Búsqueda" />
+        <input className={classes.input} type="text" placeholder="Búsqueda" onChange={handleInputChange} />
         <img className={classes.icon} src={iconSearch} alt="icono buscar" />
       </div>
-      <div className={classes.containerSede}>
-        <input className={classes.radio} type="radio" value="Sede 1" checked={selectSede === 'Sede 1'}  onChange={() => setSelectSede('Sede 1')}  />
-        <div className={classes.containerText}>
-          <p className={classes.textTitle}>Sede 1</p>
-          <p className={classes.textSub1}>Calle 1 # 87 - 78, Lorem Ipsum</p>
-          <p className={classes.textSub2}>Horario: Lorem Ipsum</p>
-        </div>
-      </div>
-      <div className={classes.containerSede}>
-        <input className={classes.radio} type="radio" value="Sede 2" checked={selectSede === 'Sede 2'} onChange={() => setSelectSede('Sede 2')}  />
-        <div className={classes.containerText}>
-          <p className={classes.textTitle}>Sede 2</p>
-          <p className={classes.textSub1}>Calle 1 # 87 - 78, Lorem Ipsum</p>
-          <p className={classes.textSub2}>Horario: Lorem Ipsum</p>
-        </div>
-      </div>
-      <div className={classes.containerSede}>
-        <input className={classes.radio} type="radio" value="Sede 3" checked={selectSede === 'Sede 3'} onChange={() => setSelectSede('Sede 3')}  />
-        <div className={classes.containerText}>
-          <p className={classes.textTitle}>Sede 3</p>
-          <p className={classes.textSub1}>Calle 1 # 87 - 78, Lorem Ipsum</p>
-          <p className={classes.textSub2}>Horario: Lorem Ipsum</p>
-        </div>
-      </div>
-      <div className={classes.containerSede}>
-        <input className={classes.radio} type="radio" value="Sede 4" checked={selectSede === 'Sede 4'} onChange={() => setSelectSede('Sede 4')}  />
-        <div className={classes.containerText}>
-          <p className={classes.textTitle}>Sede 4</p>
-          <p className={classes.textSub1}>Calle 1 # 87 - 78, Lorem Ipsum</p>
-          <p className={classes.textSub2}>Horario: Lorem Ipsum</p>
-        </div>
-      </div>
+      {filtered.map((el) => {
+        return (
+          <div className={classes.containerSede} key={el.id}>
+            <input
+              className={classes.radio}
+              type="radio"
+              value="Sede 1"
+              checked={selectSede === `${el.name}`}
+              onChange={() => setSelectSede(`${el.name}`)}
+            />
+            <div className={classes.containerText}>
+              <p className={classes.textTitle}>{el.name}</p>
+              <p className={classes.textSub1}>Calle 1 # 87 - 78, Lorem Ipsum</p>
+              <p className={classes.textSub2}>Horario: Lorem Ipsum</p>
+            </div>
+          </div>
+        );
+      })}
     </form>
   );
 };
