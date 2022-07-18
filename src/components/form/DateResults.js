@@ -142,9 +142,7 @@ const DateResults = () => {
       </Grid>
       <Grid item xs={7}>
         <img src={imgGrupo} alt="grupo" />
-        <div className={classes.containerLogo}>
-          <LogoText />
-        </div>
+       
       </Grid>
     </Grid>
   )

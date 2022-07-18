@@ -184,9 +184,7 @@ const AddDate = () => {
       </Grid>
       <Grid item xs={7}>
         <img className={classes.imgForm} src={imgForm} alt="grupo" />
-        <div className={classes.containerLogo}>
-          <LogoText />
-        </div>
+        
       </Grid>
     </Grid>
   );

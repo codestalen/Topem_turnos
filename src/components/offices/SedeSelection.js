@@ -68,7 +68,6 @@ const useStyles = makeStyles({
   },
 });
 
-
 const SedeSelection = ({ selectSede, setSelectSede }) => {
   const classes = useStyles();
 
@@ -79,7 +78,7 @@ const SedeSelection = ({ selectSede, setSelectSede }) => {
     { id: 4, name: "Sede 4" },
   ];
 
-  const [newValue, setNewValue] = useState('')
+  const [newValue, setNewValue] = useState("");
 
   const handleInputChange = (e) => {
     setNewValue(e.target.value);
@@ -94,7 +93,12 @@ const SedeSelection = ({ selectSede, setSelectSede }) => {
   return (
     <form>
       <div className={classes.containerIcon}>
-        <input className={classes.input} type="text" placeholder="Búsqueda" onChange={handleInputChange} />
+        <input
+          className={classes.input}
+          type="text"
+          placeholder="Búsqueda"
+          onChange={handleInputChange}
+        />
         <img className={classes.icon} src={iconSearch} alt="icono buscar" />
       </div>
       {filtered.map((el) => {
